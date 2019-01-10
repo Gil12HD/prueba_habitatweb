@@ -303,7 +303,7 @@ var name_two = '';
   $('.cancelar').on('click', function () {
     location.reload(true)
   })
-  $('#modalBattles .cancelar').on('click', function () {
+  $('#modalBattles').on('hidden.bs.modal', function () {
     location.reload(true)
   })
 </script>
