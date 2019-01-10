@@ -25,4 +25,16 @@ class WarriorController extends Controller
             'data' => $warriors
         ]);
     }
+
+    /**
+     * Muestra a todos los Guerreros
+     * Ruta: '/warriors'
+     * Tipo: GET
+     * Retorna: Respuesta en formato Json con los guerreros a pelear
+     */
+    public function GetWarriors()
+    {
+        $warriors = Warriors::GetWarriorss();
+        return view('welcome', compact('warriors'));
+    }
 }

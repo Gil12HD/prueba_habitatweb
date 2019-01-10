@@ -12,8 +12,10 @@
 */
 // Ruta de inicio la cual regresa a todos los peladores de la Base de Datos
 Route::get('/', function () {
-    $warriors = \App\Warriors::get();
-    return view('welcome', compact('warriors'));
+    return redirect()->route('start');
+    // $warriors = \App\Warriors::get();
+    // return view('welcome', compact('warriors'));
 });
 // Ruta para obtener a los guerreros que van a pelear
+Route::get('warriors', ['as' => 'start', 'uses' => 'WarriorController@GetWarriors']);
 Route::post('warriors', ['as' => 'start.battle', 'uses' => 'WarriorController@Warrior']);
